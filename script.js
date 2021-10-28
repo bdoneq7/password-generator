@@ -16,37 +16,37 @@ function passwordGen() {
 
   // Ask for Lowercase Characters
   var lowercase = confirm("Do you want to use lowercase characters?");
-  if( lowercase = true ) {
+  if( lowercase == true ) {
     lowercaseChoice = "abcdefghijklmnopqrstuvwxyz";
   } 
-  else { // ******** FIX ELSE - STILL GENERATES IF CANCEL SELECTED
+  else if (lowercase == false) { 
     lowercaseChoice = "";
   }
 
   // Ask for UPPERCASE Characters
   var uppercase = confirm("Do you want to use UPPERCASE characters?");
-  if( uppercase = true ) {
+  if( uppercase == true ) {
     uppercaseChoice = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   } 
-  else { // ******** FIX ELSE - STILL GENERATES IF CANCEL SELECTED
+  else if (uppercase == false) { 
     uppercaseChoice = "";
   }
 
   // Ask for Numbers
   var numeric = confirm("Do you want to use numbers?");
-  if( numeric = true ) {
+  if( numeric == true ) {
     numericChoice = "0123456789";
   } 
-  else { // ******** FIX ELSE - STILL GENERATES IF CANCEL SELECTED
+  else if (numeric == false) { 
     numericChoice = "";
   }
 
   // Ask for Special Characters
   var special = confirm("Do you want to use special characters?");
-  if( special = true ) {
+  if( special == true ) {
     specialChoice = "!#$%&*+/@";
   }
-  else { // ******** FIX ELSE - STILL GENERATES IF CANCEL SELECTED
+  else if (special == false) { 
     specialChoice = "";
   }
 
