@@ -10,13 +10,13 @@ function passwordGen() {
   var notselected = 0;
 
   // Ask for Length of Password
-  var length = prompt("What is your password length? Passwords MUST be between 8 and 128 characters");
+  var length = prompt("What is your password LENGTH? Passwords MUST be between 8 and 128 characters");
   while (length < 8 || length > 128) {
     length = prompt("Remember passwords should be between 8 and 128 characters. What is your password length?");
   }
 
   // Ask for Lowercase Characters
-  var lowercase = confirm("Do you want to use lowercase characters?");
+  var lowercase = confirm("Do you want to use lowercase characters in your password?" + '\n' + '\n' + "OK = 'Yes'" + '\n' + "Cancel = 'No'");
   if( lowercase == true ) {
     lowercaseChoice = "abcdefghijklmnopqrstuvwxyz";
   } 
@@ -27,7 +27,7 @@ function passwordGen() {
   }
 
   // Ask for UPPERCASE Characters
-  var uppercase = confirm("Do you want to use UPPERCASE characters?");
+  var uppercase = confirm("Do you want to use UPPERCASE characters in your password?" + '\n' + '\n' + "OK = 'Yes'" + '\n' + "Cancel = 'No'");
   if( uppercase == true ) {
     uppercaseChoice = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   } 
@@ -38,7 +38,7 @@ function passwordGen() {
   }
 
   // Ask for Numbers
-  var numeric = confirm("Do you want to use numbers?");
+  var numeric = confirm("Do you want to use numbers in your password?" + '\n' + '\n' + "OK = 'Yes'" + '\n' + "Cancel = 'No'");
   if( numeric == true ) {
     numericChoice = "0123456789";
   } 
@@ -49,7 +49,7 @@ function passwordGen() {
   }
 
   // Ask for Special Characters
-  var special = confirm("Do you want to use special characters?");
+  var special = confirm("Do you want to use special characters in your password?" + '\n' + '\n' + "OK = 'Yes'" + '\n' + "Cancel = 'No'");
   if( special == true ) {
     specialChoice = "!#$%&*+/@";
   }
