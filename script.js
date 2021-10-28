@@ -7,6 +7,7 @@ function passwordGen() {
   var uppercaseChoice;
   var numericChoice;
   var specialChoice;
+  var notselected = 0;
 
   // Ask for Length of Password
   var length = prompt("What is your password length? Passwords MUST be between 8 and 128 characters");
@@ -21,6 +22,8 @@ function passwordGen() {
   } 
   else if (lowercase == false) { 
     lowercaseChoice = "";
+    notselected = notselected + 1;
+    prompt("Remember you must choose at least 1 character type! You have currently not selected " + notselected + " character types." );
   }
 
   // Ask for UPPERCASE Characters
@@ -30,6 +33,8 @@ function passwordGen() {
   } 
   else if (uppercase == false) { 
     uppercaseChoice = "";
+    notselected = notselected + 1;
+    prompt("Remember you must choose at least 1 character type! You have currently not selected " + notselected + " character types." );
   }
 
   // Ask for Numbers
@@ -39,6 +44,8 @@ function passwordGen() {
   } 
   else if (numeric == false) { 
     numericChoice = "";
+    notselected = notselected + 1;
+    prompt("Remember you must choose at least 1 character type! You have currently not selected " + notselected + " character types." );
   }
 
   // Ask for Special Characters
@@ -48,6 +55,11 @@ function passwordGen() {
   }
   else if (special == false) { 
     specialChoice = "";
+    notselected = notselected + 1;
+    while (notselected > 3) {
+      prompt("Remember you must choose at least 1 character type! You have not selected ANY character types. Please Start Over." ); 
+      passwordGen();
+    }
   }
 
   // Generate Password Based on Input
