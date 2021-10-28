@@ -2,64 +2,60 @@
 // Function to Generate Password 
 function passwordGen() {
 
-var length = Number(prompt("What is your password length? Must be between 8 and 128"));
-// ******* FIX LENGTH VALIDATION ********
-// if length < 8 || > 128 {
-  // alert("Password must be between 8 and 128 characters");
-// }
+  // Set Variables for Choice
+  var lowercaseChoice;
+  var uppercaseChoice;
+  var numericChoice;
+  var specialChoice;
 
-//ask for lowercase
-var lowercase = prompt("Do you want to use lowercase characters?");
+  // Ask for Length of Password
+  var length = prompt("What is your password length? Passwords MUST be between 8 and 128 characters");
+  while (length < 8 || length > 128) {
+    length = prompt("Remember passwords should be between 8 and 128 characters. What is your password length?");
+  }
 
-//ask for uppercase
-var uppercase = prompt("Do you want to use UPPERCASE characters?");
-
-//ask for numbers
-var numeric = prompt("Do you want to use numbers?");
-
-//ask for special
-var special = prompt("Do you want to use special characters?");
-
-  var lowercaseSet = "";
-  var uppercaseSet = "";
-  var numericSet = "";
-  var specialSet = "";
-
+  // Ask for Lowercase Characters
+  var lowercase = confirm("Do you want to use lowercase characters?");
   if( lowercase = true ) {
-    lowercaseSet = "abcdefghijklmnopqrstuvwxyz";
+    lowercaseChoice = "abcdefghijklmnopqrstuvwxyz";
   } 
   else { // ******** FIX ELSE - STILL GENERATES IF CANCEL SELECTED
-    lowercaseSet = false;
+    lowercaseChoice = "";
   }
 
+  // Ask for UPPERCASE Characters
+  var uppercase = confirm("Do you want to use UPPERCASE characters?");
   if( uppercase = true ) {
-    uppercaseSet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    uppercaseChoice = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   } 
   else { // ******** FIX ELSE - STILL GENERATES IF CANCEL SELECTED
-    uppercaseSet = false;
+    uppercaseChoice = "";
   }
 
+  // Ask for Numbers
+  var numeric = confirm("Do you want to use numbers?");
   if( numeric = true ) {
-    numericSet = "0123456789";
+    numericChoice = "0123456789";
   } 
   else { // ******** FIX ELSE - STILL GENERATES IF CANCEL SELECTED
-    numericSet = false;
+    numericChoice = "";
   }
 
+  // Ask for Special Characters
+  var special = confirm("Do you want to use special characters?");
   if( special = true ) {
-    specialSet = "!#$%&*+/@";
+    specialChoice = "!#$%&*+/@";
   }
   else { // ******** FIX ELSE - STILL GENERATES IF CANCEL SELECTED
-    specialSet = false;
+    specialChoice = "";
   }
-  
-  //return value
-  var combine = lowercaseSet + uppercaseSet + numericSet + specialSet;
-  var result = "";
+
+  // Generate Password Based on Input
+  var choices = lowercaseChoice + uppercaseChoice + numericChoice + specialChoice;
+  var securepassword = "";
   for (var i = 0; i < length; i++) {
-    //picks a character within lowercaseSet and uppercaseSet at index of random number
-    result += combine.charAt(Math.floor(Math.random()  * combine.length));
-    document.getElementById("password").innerHTML = result;
+    securepassword += choices.charAt(Math.floor(Math.random()  * choices.length));
+    document.getElementById("password").innerHTML = "Your Secure Password" + '\n' + '\n' + securepassword;
   }
   
 }
