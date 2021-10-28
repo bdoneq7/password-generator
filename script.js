@@ -1,4 +1,10 @@
-// Global Variables
+
+// ********* FIX PROMPTS FROM AUTO POPPING BEFORE BUTTON CLICKED ************
+
+
+
+// Function to Generate Password 
+function passwordGen() {
 
 var length = Number(prompt("What is your password length? Must be between 8 and 128"));
 // ******* FIX LENGTH VALIDATION ********
@@ -18,10 +24,6 @@ var numeric = prompt("Do you want to use numbers?");
 //ask for special
 var special = prompt("Do you want to use special characters?");
 
-// Function to Generate Password - Contains local variables
-function passwordGen() {
-
-  //evaluate 
   var lowercaseSet = "";
   var uppercaseSet = "";
   var numericSet = "";
