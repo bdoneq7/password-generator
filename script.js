@@ -1,8 +1,4 @@
 
-// ********* FIX PROMPTS FROM AUTO POPPING BEFORE BUTTON CLICKED ************
-
-
-
 // Function to Generate Password 
 function passwordGen() {
 
@@ -63,11 +59,10 @@ var special = prompt("Do you want to use special characters?");
   for (var i = 0; i < length; i++) {
     //picks a character within lowercaseSet and uppercaseSet at index of random number
     result += combine.charAt(Math.floor(Math.random()  * combine.length));
+    document.getElementById("password").innerHTML = result;
   }
-  return result;
+  
 }
-alert(passwordGen());
-
 
 
 // Get references to the #generate element
@@ -77,7 +72,6 @@ var generateBtn = document.querySelector("#generate");
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
-
   passwordText.value = password;
 
 }
